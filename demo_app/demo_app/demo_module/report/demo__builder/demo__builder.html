@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<head> 
+ <meta charset="utf-8"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">  
+  <meta name="viewport" content="width=device-width, initial-scale=1">  
+  <meta name="description" content="">  <meta name="author" content="">  
+  <title>Item ce</title>  
+  <link href="http://0.0.0.0:8000/assets/css/printview.css" rel="stylesheet"> 
+  
+
+   <style> 
+   #de {display: inline;}
+   #de2 {display: inline;}
+   h5 {display: inline;}
+   	  @media screen {
+	.print-format-gutter {
+		background-color: gray;
+		padding: 30px 0px;
+	}
+	
+	.print-format {
+		background-color: white;
+		border-radius: 8px;
+		max-width: 8.3in;
+		min-height: 11.69in;
+		padding: 0.75in;
+		margin: auto;
+		color: var(--gray-900);
+	}
+
+	.print-format.landscape {
+		max-width: 11.69in;
+		padding: 0.2in;
+	}
+
+	.page-break {
+		/* padding: 15px 0px; */
+		border-bottom: 1px dashed #888;
+	}
+
+	/* .page-break:first-child {
+		padding-top: 0px;
+	} */
+
+	.page-break:last-child {
+		border-bottom: 0px;
+	}
+
+	/* mozilla hack for images in table */
+	body:last-child .print-format td img {
+		width: 100% !important;
+	}
+
+	@media(max-width: 767px) {
+		.print-format {
+			padding: 0.2in;
+		}
+	}
+}
+
+@media print {
+	.print-format p {
+		margin-left: 1px;
+		margin-right: 1px;
+	}
+}
+
+.disabled-check {
+	color: #eee;
+}
+
+.data-field {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.data-field .value {
+	word-wrap: break-word;
+}
+
+.important .value {
+	font-size: 120%;
+	font-weight: bold;
+}
+
+.important label {
+	line-height: 1.8;
+	margin: 0px;
+}
+
+.table {
+	font-size: inherit;
+	margin: 20px 0px;
+}
+
+.square-image {
+	width: 100%;
+	height: 0;
+	padding: 50% 0;
+	background-size: contain;
+	/*background-size: cover;*/
+	background-repeat: no-repeat !important;
+	background-position: center center;
+	border-radius: 4px;
+}
+
+.print-item-image {
+	object-fit: contain;
+}
+
+.pdf-variables,
+.pdf-variable,
+.visible-pdf {
+	display: none !important;
+}
+
+.print-format {
+	font-size: 9pt;
+	font-family: Inter, "Helvetica Neue", Helvetica, Arial, "Open Sans", sans-serif;
+	-webkit-print-color-adjust:exact;
+}
+
+.page-break {
+	page-break-after: always;
+}
+
+.print-heading {
+	border-bottom: 1px solid #aaa;
+	margin-bottom: 10px;
+}
+
+.print-heading h2 {
+	margin: 0px;
+}
+.print-heading h4 {
+	margin-top: 5px;
+}
+
+table.no-border, table.no-border td {
+	border: 0px;
+}
+
+.print-format label {
+	/* wkhtmltopdf breaks label into multiple lines when it is inline-block */
+	display: block;
+	font-weight: 700;
+}
+
+.print-format img {
+	max-width: 100%;
+}
+
+.print-format table td > .primary:first-child {
+	font-weight: bold;
+}
+
+.print-format td, .print-format th {
+	vertical-align: top !important;
+	padding: 6px !important;
+}
+
+.print-format p {
+	margin: 3px 0px 3px;
+}
+
+.print-format table td pre {
+	white-space: normal;
+	word-break: normal;
+}
+
+table td div {
+	
+	/* needed to avoid partial cutting of text between page break in wkhtmltopdf */
+	page-break-inside: avoid !important;
+	
+}
+
+/* hack for webkit specific browser */
+@media (-webkit-min-device-pixel-ratio:0) {
+	thead, tfoot {
+		display: table-header-group;
+	}
+}
+
+[document-status] {
+	margin-bottom: 5mm;
+}
+
+.signature-img {
+	background: #fff;
+	border-radius: 3px;
+	margin-top: 5px;
+	max-height: 150px;
+}
+
+.print-format-preview [data-fieldtype="Table"] {
+	overflow: auto;
+}
+.print-heading {
+	text-align: right;
+	text-transform: uppercase;
+	color: #666;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #d1d8dd;
+}
+
+.print-heading h2 {
+	font-size: 24px;
+}
+
+.print-format th {
+	background-color: #eee !important;
+	border-bottom: 0px !important;
+}
+
+.print-format .primary.compact-item {
+    font-weight: bold;
+}
+
+/* modern format: for-test */
+  </style> 
+  
+  </head> 
+  <body>  
+  <div class="">    
+  <div id="footer-html" class="visible-pdf"> 
+  <p class="text-center small page-number visible-pdf">      Page <span class="page"></span> of <span class="topage"></span>     </p>    </div>     
+    
+ <div class="print-format  landscape ">    
+       <h2>Item Price</h2> 
+       <h5 id="de"></h5> 
+        <h5>-</h5>
+         <h5 id = "de2"></h5> 
+         <h5>-</h5> 
+         <h5 id = "de3"></h5> 
+         
+          <script> const d = new Date();
+          const dd = new Date();
+          const ddd = new Date();
+document.getElementById("de").innerHTML = d.getFullYear();
+document.getElementById("de2").innerHTML = dd.getMonth() + 1;
+document.getElementById("de3").innerHTML = ddd.getDate();
+
+
+</script>                                     <hr>  
+        <table class="table table-bordered">    
+        <thead>   <tr>   <th> # </th>           <th>     ID</th>               <th>     Item Name23</th>             
+          <th>     Item Code</th>               <th>     Brand</th>               <th>     Price List</th>     
+                    <th class="text-right">     Rate</th>            
+                       <th>     Reference</th>           
+                           <th>     Currency</th>          </tr>  </thead>   
+                            <tbody>       <tr style="height: 30px"> 
+                               <td>     <span> 1 </span>    </td>             
+                        <td>       <span style="padding-left: 0em">          
+                        <a href="/app/item-price/39c3e789a7" data-doctype="Item Price" data-name="39c3e789a7">
+39c3e789a7</a>               </span>      </td>                            <td>       <span>                         g13  
+             </span>      </td>                            <td>       <span>                    
+                  <a href="/app/item/4243" data-doctype="Item" data-name="4243">4243: g13</a>    
+                             </span>      </td>                            <td>       <span>           
+                                                          </span>      </td>                            <td>       <span>                         <a href="/app/price-list/Standard%20Selling" data-doctype="Price List" data-name="Standard Selling">
+					Standard Selling</a>               </span>      </td>       
+      <td>       <span>                         <div style="text-align: right">ل.د 12.00</div>               </span>  
+          </td>                            <td>       <span>                                        </span>      
+          </td>                            <td>       <span>                     
+              <a href="/app/currency/LYD" data-doctype="Currency" data-name="LYD">
+					LYD</a>               </span>      </td>             </tr>     </tbody> </table>    </div> 
+					 </div>   </body></html>
